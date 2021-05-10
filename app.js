@@ -88,7 +88,7 @@ app.get('/ping', (req, res) =>{
 
 app.get('/client_qr', (req, res) =>{
     if(fs.existsSync(QR_FILE_PATH)) {
-        res.json({status: 'success', data: fs.readFileSync(QR_FILE_PATH)})
+        res.json({status: 'success', data: fs.readFileSync(QR_FILE_PATH).toString()})
     } else {
         res.json({status: 'error', message:'qr not generated/found'})
     }
